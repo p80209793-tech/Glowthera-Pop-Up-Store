@@ -69,7 +69,13 @@
          border: none !important;
          /* Remove borders that might affect width */
          background: transparent !important;
-         /* Ensure clear background for wrappers */
+     }
+
+     /* Ensure overflow is visible for breakout images */
+     .hero-image-container,
+     .event-card.full,
+     .highlight-box {
+         overflow: visible !important;
      }
 
 
@@ -142,9 +148,10 @@
          padding: 0;
      }
 
-     /* Force Full Bleed for Hero and All Banner Images */
+     /* Force Full Bleed for Hero and All Banner Images including Cards */
      .hero-img,
-     .full-width-img {
+     .full-width-img,
+     .card-img {
          width: 100vw !important;
          max-width: none !important;
          margin-left: calc(-50vw + 50%) !important;
