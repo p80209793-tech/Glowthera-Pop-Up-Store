@@ -61,41 +61,50 @@
      .event-card,
      .event-card.full,
      .highlight-box {
+         /* Keep central column logic for text, but allow images to break out */
          width: 100% !important;
          max-width: none !important;
-         /* Remove constraints */
          padding: 0 !important;
          margin: 0 !important;
-         border: none !important;
-         /* Remove borders that might affect width */
-         background: transparent !important;
-         /* Ensure clear background for wrappers */
      }
 
+     /* 2. Anti-Gravity Image Breakout (Full Bleed + Spacing) */
+     .hero-image-container,
+     img.full-width-img,
+     .event-card.full,
+     .main-banner img {
+         width: 100vw !important;
+         position: relative !important;
+         left: 50% !important;
+         right: 50% !important;
+         margin-left: -50vw !important;
+         margin-right: -50vw !important;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         max-width: none !important;
 
+         /* Vertical Spacing */
+         margin-top: 24px !important;
+         margin-bottom: 24px !important;
+     }
 
-     /* 2. Image Full Width & Natural Height (Maximize Size) */
-     img,
-     .hero-img,
-     .full-width-img,
-     .card-img,
+     /* Inner Image Props */
+     .hero-image-container img,
+     .event-card.full img,
+     img.full-width-img,
      .main-banner img {
          width: 100% !important;
-         max-width: 100% !important;
          height: auto !important;
-         /* Force proportional height */
-         max-height: none !important;
-         border-radius: 0 !important;
-         display: block;
-         object-fit: contain;
-         /* Ensure full image is visible */
+         /* Maintain aspect ratio */
+         display: block !important;
+         object-fit: cover !important;
          margin: 0 !important;
+         padding: 0 !important;
+         border-radius: 0 !important;
      }
 
-     /* Ensure Main Banner specifically is not restricted */
-     .main-banner img {
-         height: auto !important;
-     }
+     /* Special adjustment for sticky button area if needed,
+        but general margins should be fine. */
 
      /* 3. Text Typography & Padding Fixes */
 
