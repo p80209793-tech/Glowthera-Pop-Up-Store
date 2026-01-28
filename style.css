@@ -53,17 +53,26 @@
  /* Mobile Full Width Adjustments */
  @media (max-width: 768px) {
 
-     /* 1. Container Padding Removal for Full Bleed Images */
+     /* 1. Container & Wrapper Padding/Width Reset */
      .container,
      .hero-section,
-     .section {
-         width: 100%;
-         max-width: 100%;
-         padding-left: 0 !important;
-         padding-right: 0 !important;
-         margin-left: 0 !important;
-         margin-right: 0 !important;
+     .section,
+     .hero-image-container,
+     .event-card,
+     .event-card.full,
+     .highlight-box {
+         width: 100% !important;
+         max-width: none !important;
+         /* Remove constraints */
+         padding: 0 !important;
+         margin: 0 !important;
+         border: none !important;
+         /* Remove borders that might affect width */
+         background: transparent !important;
+         /* Ensure clear background for wrappers */
      }
+
+
 
      /* 2. Image Full Width & Natural Height (Maximize Size) */
      img,
