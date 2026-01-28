@@ -17,17 +17,14 @@
  }
 
  body {
-     font-family: 'Noto Sans KR', sans-serif;
+     font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
      line-height: 1.6;
-     /* Deep Vertical Gradient with Subtle Diagonal Texture */
-     background-color: #7a46f2;
-     /* Fallback */
-     background-image:
-         repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 20px),
-         linear-gradient(180deg, #fff0f5 0%, #ff9a9e 40%, #c471ed 70%, #7a46f2 100%);
+     /* Bold Dramatic Gradient (White -> Pink -> Purple) */
+     background: linear-gradient(180deg, #ffffff 0%, #fce7f3 40%, #c084fc 100%);
      background-attachment: fixed;
-     background-size: auto, cover;
-     color: var(--text-dark);
+     background-size: cover;
+     color: #333333;
+     /* Darker text for readability */
      /* Revert to dark text for light background */
      padding-bottom: 80px;
      /* Space for sticky button */
@@ -224,10 +221,10 @@
      font-weight: 900;
      /* Extra bold */
      margin-bottom: 20px;
-     color: #ffffff;
-     /* Stylish White */
-     text-shadow: 0 0 10px rgba(122, 70, 242, 0.6), 0 2px 5px rgba(0, 0, 0, 0.2);
-     /* Purple Glow + Soft Shadow */
+     color: #4C1D95;
+     /* Deep Violet */
+     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+     /* Strong 3D Drop Shadow */
  }
 
  .event-info {
@@ -265,7 +262,9 @@
      font-weight: 700;
      margin-bottom: 15px;
      text-align: center;
-     color: var(--text-dark);
+     color: #4C1D95;
+     /* Deep Violet for Premium Look */
+     font-weight: 700;
      padding: 0 20px;
      /* Added padding here */
  }
@@ -541,37 +540,39 @@
      .footer {
          margin-top: 60px !important;
      }
- }/* =========================================
+ }
+
+ /* =========================================
    FINAL CONTAINER RESET (User Request #10)
    ========================================= */
-@media (max-width: 768px) {
+ @media (max-width: 768px) {
 
-    /* Target the PARENTS of the Hero Image */
-    .hero-section,
-    .hero-image-container {
-        width: 100% !important;
-        max-width: none !important;
-        padding: 0 !important;
-        /* Kill padding */
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        margin: 0 !important;
-        /* Kill margin */
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        border: none !important;
-        background: transparent !important;
-    }
+     /* Target the PARENTS of the Hero Image */
+     .hero-section,
+     .hero-image-container {
+         width: 100% !important;
+         max-width: none !important;
+         padding: 0 !important;
+         /* Kill padding */
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         margin: 0 !important;
+         /* Kill margin */
+         margin-left: 0 !important;
+         margin-right: 0 !important;
+         border: none !important;
+         background: transparent !important;
+     }
 
-    /* Ensure the Image itself acts right */
-    .hero-img {
-        width: 100% !important;
-        /* Fill the freed container */
-        height: auto !important;
-        /* Natural height */
-        object-fit: contain !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        display: block !important;
-    }
-}
+     /* Ensure the Image itself acts right */
+     .hero-img {
+         width: 100% !important;
+         /* Fill the freed container */
+         height: auto !important;
+         /* Natural height */
+         object-fit: contain !important;
+         margin: 0 !important;
+         padding: 0 !important;
+         display: block !important;
+     }
+ }
