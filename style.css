@@ -30,12 +30,12 @@
 
  /* Header */
  .header {
-     background: rgba(255, 255, 255, 0.7);
-     /* Lighter glassmorphism */
-     backdrop-filter: blur(10px);
+     background: #f6ebfb;
+     /* Matched from logo bg */
+     backdrop-filter: none;
      padding: 15px 20px;
      text-align: center;
-     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+     border-bottom: none;
      position: sticky;
      top: 0;
      z-index: 100;
@@ -48,7 +48,7 @@
  }
 
  .header-logo-img {
-     height: 50px;
+     height: 100px;
      width: auto;
      object-fit: contain;
  }
