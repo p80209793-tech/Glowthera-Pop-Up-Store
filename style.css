@@ -203,7 +203,9 @@
  .hero-img {
      width: 100%;
      max-width: 600px;
-     /* Kept reduced size */
+     /* Significantly increased height as requested */
+     height: 800px !important;
+     object-fit: cover !important;
      display: block;
      margin: 0 auto;
  }
@@ -258,6 +260,12 @@
  /* Pre-Reg Section */
  .pre-reg {
      background: transparent;
+ }
+
+ /* Significantly increase Pre-reg image height */
+ .pre-reg .full-width-img {
+     height: 800px !important;
+     object-fit: cover !important;
  }
 
  .highlight-box {
