@@ -31,6 +31,11 @@
      /* Revert to dark text for light background */
      padding-bottom: 80px;
      /* Space for sticky button */
+
+     /* Fix: Prevent awkward single-character line breaks matching Korean typography */
+     word-break: keep-all;
+     overflow-x: hidden;
+     /* Prevent horizontal scroll */
  }
 
  /* Header */
@@ -43,6 +48,81 @@
      position: sticky;
      top: 0;
      z-index: 100;
+ }
+
+ /* Mobile Full Width Adjustments */
+ @media (max-width: 768px) {
+
+     /* 1. Container Padding Removal for Full Bleed Images */
+     .container,
+     .hero-section,
+     .section {
+         width: 100%;
+         max-width: 100%;
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         margin-left: 0 !important;
+         margin-right: 0 !important;
+     }
+
+     /* 2. Image Full Width Setting */
+     img,
+     .hero-img,
+     .full-width-img,
+     .card-img {
+         width: 100% !important;
+         max-width: 100% !important;
+         border-radius: 0 !important;
+         display: block;
+         object-fit: cover;
+         /* Removed 100vw breakout as container is now 0 padding */
+         margin: 0 !important;
+     }
+
+     /* 3. Text Typography & Padding Fixes */
+
+     /* Main Title Adjustment */
+     .main-title {
+         font-size: 2.2rem;
+         /* Reduce slightly from 3.5rem to fit mobile */
+         padding: 0 20px;
+         line-height: 1.2;
+     }
+
+     /* Date/Event Info Adjustment */
+     .event-info {
+         font-size: 1rem;
+         /* Adjust to fit single line if possible */
+         padding: 0 20px;
+         white-space: nowrap;
+         /* Try to keep on one line */
+     }
+
+     /* General Text Padding since container has 0 padding */
+     .section-title,
+     .section-desc,
+     .sub-title,
+     .hero-content p,
+     .highlight-box h2,
+     .highlight-box p,
+     .container>h2,
+     .consulting .container>div,
+     .footer p {
+         padding-left: 20px;
+         padding-right: 20px;
+     }
+
+     /* Button Sizing */
+     .cta-button {
+         width: calc(100% - 40px);
+         margin-left: 20px;
+         margin-right: 20px;
+         box-sizing: border-box;
+     }
+
+     .highlight-box {
+         padding: 0;
+     }
  }
 
  .logo {
@@ -334,127 +414,5 @@
  @media (max-width: 768px) {
      .main-banner img {
          height: 200px;
-     }
- }
-
- /* Mobile Full Width Adjustments */
- @media (max-width: 768px) {
-     .container {
-         width: 100%;
-         max-width: 100%;
-         padding: 0;
-         margin: 0;
-     }
-
-     /* Force all images to be full width (Breakout Container) */
-     img {
-         width: 100vw !important;
-         max-width: 100vw !important;
-         min-width: 100vw !important;
-         margin-left: calc(-50vw + 50%);
-         /* Break out of parent container */
-         margin-right: calc(-50vw + 50%);
-         /* Break out of parent container */
-         border-radius: 0 !important;
-         display: block;
-         object-fit: cover !important;
-         /* Allow cropping to ensure fill */
-         height: auto;
-         /* Maintain aspect ratio mostly, or set fixed height if needed */
-     }
-
-     /* Ensure Hero Image also breaks out */
-     .hero-img {
-         width: 100vw !important;
-         max-width: 100vw !important;
-         margin-left: calc(-50vw + 50%);
-     }
-
-     /* Fix potential overflow causing horizontal scroll */
-     body,
-     html {
-         overflow-x: hidden;
-     }
-
-     /* Reset container padding to ensure text is readable but images breakout */
-     .container {
-         width: 100%;
-         padding: 0;
-     }
-
-     .hero-img,
-     .full-width-img,
-     .card-img {
-         width: 100%;
-         border-radius: 0 !important;
-     }
-
-     /* Remove padding from Highlight Box so image touches edges */
-     .highlight-box {
-         padding: 0;
-     }
-
-     /* Add padding ONLY to text elements for readability */
-     .section-title,
-     .section-desc,
-     .sub-title,
-     .main-title,
-     .event-info {
-         padding-left: 20px;
-         padding-right: 20px;
-     }
-
-     /* Specific text padding for content inside sections */
-     .highlight-box h2,
-     .highlight-box p,
-     .highlight-box .cta-button,
-     .hero-content,
-     .promo .container>h2,
-     .consulting .container>h2,
-     .consulting .container>div,
-     /* For button container */
-     .footer p {
-         padding-left: 20px;
-         padding-right: 20px;
-     }
-
-     /* Reset padding for centered buttons if needed */
-     .cta-button {
-         width: calc(100% - 40px);
-         /* Make button wide with spacing */
-         margin-left: 20px;
-         margin-right: 20px;
-         box-sizing: border-box;
-     }
-
-     .event-card {
-         padding: 0;
-         /* Remove card padding */
-         background: transparent;
-         /* Or keep white but full width? usually cards have padding. 
-            If card has image inside, and we want image full width:
-         */
-         border-radius: 0;
-         border: none;
-     }
-
-     .event-card h2,
-     .event-card h3,
-     .event-card p {
-         padding: 0 20px;
-         /* Add padding to text inside cards */
-     }
-
-     /* Special case: Ensure sticky button is safe */
-     .sticky-button {
-         width: 100%;
-         border-radius: 0;
-         max-width: 100%;
-         margin: 0;
-     }
-
-     .sticky-cta {
-         padding: 0;
-         background: rgba(255, 255, 255, 0.9);
      }
  }
