@@ -497,14 +497,13 @@
      .card-img {
          height: auto !important;
          /* Force natural height */
-         object-fit: cover !important;
-         /* Ensure coverage */
-         width: 100vw !important;
-         /* Force Full Screen Width */
-         max-width: none !important;
-         margin-left: calc(-50vw + 50%) !important;
-         /* Center and pull to edges */
-         margin-right: calc(-50vw + 50%) !important;
+         object-fit: contain !important;
+         /* Ensure content is never cropped */
+         width: 100% !important;
+         /* Fit within container */
+         max-width: 100% !important;
+         margin-left: 0 !important;
+         margin-right: 0 !important;
          border-radius: 0 !important;
      }
 
