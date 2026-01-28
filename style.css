@@ -492,14 +492,16 @@
      /* 1. Fix Image Cropping: Override global height constraints */
      /* 1. Special Fix for Hero Image: Full Bleed + No Crop */
      /* 1. Special Fix for Hero Image: ULTRA ROBUST Full Bleed */
+     /* 1. Special Fix for Hero Image: SAFE MODE (CEO Request) */
      .hero-img {
-         position: relative !important;
-         left: 50% !important;
-         right: 50% !important;
-         margin-left: -50vw !important;
-         margin-right: -50vw !important;
-         width: 100vw !important;
-         max-width: none !important;
+         width: 100% !important;
+         max-width: 100% !important;
+         height: auto !important;
+         object-fit: contain !important;
+         margin: 0 auto !important;
+         display: block !important;
+         position: static !important;
+         transform: none !important;
 
          height: auto !important;
          /* Scale height naturally */
