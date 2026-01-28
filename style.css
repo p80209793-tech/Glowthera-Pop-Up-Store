@@ -490,7 +490,20 @@
  @media (max-width: 768px) {
 
      /* 1. Fix Image Cropping: Override global height constraints */
-     .hero-img,
+     /* 1. Special Fix for Hero Image: Safe Full Width (Contained) to prevent side cropping */
+     .hero-img {
+         height: auto !important;
+         object-fit: contain !important;
+         /* Ensure content is never cropped */
+         width: 100% !important;
+         /* Use 100% instead of 100vw to fit safely within viewport */
+         max-width: 100% !important;
+         margin-left: 0 !important;
+         margin-right: 0 !important;
+         border-radius: 0 !important;
+     }
+
+     /* 2. Other Banners: Force Full Bleed (100vw) as desired */
      .pre-reg .full-width-img,
      .main-banner img,
      .full-width-img,
