@@ -1,0 +1,34 @@
+/* =========================================
+   FINAL CONTAINER RESET (User Request #10)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* Target the PARENTS of the Hero Image */
+    .hero-section,
+    .hero-image-container {
+        width: 100% !important;
+        max-width: none !important;
+        padding: 0 !important;
+        /* Kill padding */
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin: 0 !important;
+        /* Kill margin */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        border: none !important;
+        background: transparent !important;
+    }
+
+    /* Ensure the Image itself acts right */
+    .hero-img {
+        width: 100% !important;
+        /* Fill the freed container */
+        height: auto !important;
+        /* Natural height */
+        object-fit: contain !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+}
