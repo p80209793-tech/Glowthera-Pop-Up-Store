@@ -163,16 +163,24 @@
      }
 
      /* Special Handling for Hero Image to Avoid Cropping */
+     /* Special Handling for Hero Image: Revert to Standard Contained Width */
      .hero-img {
-         width: 100vw !important;
-         max-width: none !important;
-         margin-left: calc(-50vw + 50%) !important;
-         margin-right: calc(-50vw + 50%) !important;
-         border-radius: 0 !important;
+         width: 100% !important;
+         max-width: 100% !important;
+         margin: 0 auto !important;
+         border-radius: 12px !important;
          height: auto !important;
-         /* Allow natural height */
          object-fit: contain !important;
-         /* Show full image */
+     }
+
+     /* Special Handling for Pre-reg Image: Revert to Standard Contained Width */
+     .pre-reg .full-width-img {
+         width: 100% !important;
+         max-width: 100% !important;
+         margin: 0 auto !important;
+         border-radius: 12px !important;
+         height: auto !important;
+         object-fit: contain !important;
      }
  }
 
@@ -249,7 +257,7 @@
      /* Removed side padding for full-width images */
      background: transparent;
      /* Transparent to show gradient */
-     margin-bottom: 10px;
+     margin-bottom: 60px;
  }
 
  .section-title {
