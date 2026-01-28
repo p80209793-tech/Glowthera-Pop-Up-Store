@@ -19,9 +19,14 @@
  body {
      font-family: 'Noto Sans KR', sans-serif;
      line-height: 1.6;
-     /* Pastel Purple to Pink Gradient */
-     background: linear-gradient(180deg, #e0c3fc 0%, #ff9a9e 100%) no-repeat center center fixed;
-     background-size: cover;
+     /* Deep Vertical Gradient with Subtle Diagonal Texture */
+     background-color: #7a46f2;
+     /* Fallback */
+     background-image:
+         repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 20px),
+         linear-gradient(180deg, #fff0f5 0%, #ff9a9e 40%, #c471ed 70%, #7a46f2 100%);
+     background-attachment: fixed;
+     background-size: auto, cover;
      color: var(--text-dark);
      /* Revert to dark text for light background */
      padding-bottom: 80px;
@@ -107,7 +112,8 @@
 
  /* Generic Sections */
  .section {
-     padding: 40px 20px;
+     padding: 40px 0;
+     /* Removed side padding for full-width images */
      background: transparent;
      /* Transparent to show gradient */
      margin-bottom: 10px;
@@ -119,13 +125,16 @@
      margin-bottom: 15px;
      text-align: center;
      color: var(--text-dark);
-     /* Dark title */
+     padding: 0 20px;
+     /* Added padding here */
  }
 
  .section-desc {
      text-align: center;
      color: var(--text-gray);
      margin-bottom: 20px;
+     padding: 0 20px;
+     /* Added padding here */
  }
 
  .container {
@@ -325,5 +334,68 @@
  @media (max-width: 768px) {
      .main-banner img {
          height: 200px;
+     }
+ }
+
+ /* Mobile Full Width Adjustments */
+ @media (max-width: 768px) {
+     .container {
+         width: 100%;
+         max-width: 100%;
+         padding: 0;
+         margin: 0;
+     }
+
+     img {
+         border-radius: 0 !important;
+         width: 100% !important;
+         max-width: 100% !important;
+     }
+
+     .hero-img,
+     .full-width-img,
+     .card-img {
+         width: 100%;
+         border-radius: 0 !important;
+     }
+
+     /* Ensure text still has padding since container padding is gone */
+
+
+     /* Since we stripped container padding/margin, we need to ensure text isn't flush. 
+        Most text elements have 'padding: 0 20px' or are centered. 
+        Let's explicitly add padding to text containers if needed, 
+        but .section-title and desc already have it.
+     */
+
+     .hero-content {
+         padding-left: 20px;
+         padding-right: 20px;
+     }
+
+     /* Adjust event cards if they have padding */
+     .event-card {
+         border-radius: 0;
+         margin-bottom: 0;
+         /* Stack tighter on mobile? */
+         border-left: none;
+         border-right: none;
+     }
+
+     .event-card.full {
+         border-radius: 0;
+     }
+
+     /* Highlight box text alignment */
+     .highlight-box {
+         padding: 0 20px;
+         /* Add padding for text content inside */
+     }
+
+     /* Reset padding for headers/titles that might be inside sections */
+     .section-title,
+     .section-desc {
+         padding-left: 20px;
+         padding-right: 20px;
      }
  }
