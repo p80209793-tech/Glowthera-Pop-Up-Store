@@ -156,6 +156,10 @@
          margin-left: calc(-50vw + 50%) !important;
          margin-right: calc(-50vw + 50%) !important;
          border-radius: 0 !important;
+         height: auto !important;
+         /* Allow natural height to prevent cropping */
+         object-fit: contain !important;
+         /* Ensure full image is visible */
      }
 
      /* Special Handling for Hero Image to Avoid Cropping */
