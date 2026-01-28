@@ -148,8 +148,7 @@
          padding: 0;
      }
 
-     /* Force Full Bleed for Hero and All Banner Images including Cards */
-     .hero-img,
+     /* Force Full Bleed for All Banner Images including Cards */
      .full-width-img,
      .card-img {
          width: 100vw !important;
@@ -157,6 +156,19 @@
          margin-left: calc(-50vw + 50%) !important;
          margin-right: calc(-50vw + 50%) !important;
          border-radius: 0 !important;
+     }
+
+     /* Special Handling for Hero Image to Avoid Cropping */
+     .hero-img {
+         width: 100vw !important;
+         max-width: none !important;
+         margin-left: calc(-50vw + 50%) !important;
+         margin-right: calc(-50vw + 50%) !important;
+         border-radius: 0 !important;
+         height: auto !important;
+         /* Allow natural height */
+         object-fit: contain !important;
+         /* Show full image */
      }
  }
 
