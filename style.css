@@ -19,12 +19,11 @@
  body {
      font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
      line-height: 1.6;
-     /* Bold Dramatic Gradient (White -> Pink -> Purple) */
-     background: linear-gradient(180deg, #ffffff 0%, #fce7f3 40%, #c084fc 100%);
-     background-attachment: fixed;
-     background-size: cover;
-     color: #333333;
-     /* Darker text for readability */
+     /* Pure White Background (Final Master Version) */
+     background: #ffffff;
+     background-image: none;
+     color: #111111;
+     /* Stark Dark text */
      /* Revert to dark text for light background */
      padding-bottom: 80px;
      /* Space for sticky button */
